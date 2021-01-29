@@ -7,7 +7,7 @@
   <form action="/events" method="post">
 
     <label for="date">Date</label>
-    <input type="text" name="date" id="date">
+    <input type="date" name="date" id="date">
 
     <label for="name_of_event">Name of Event</label>
     <input type="text" name="name_of_event" id="name_of_event">
@@ -27,7 +27,7 @@
   {% for event in events %}  
   <div>
     <p>
-      {{ event.name_of_event }}: <b>{{ event.description }}</b>
+      <b>{{ event.name_of_event }}</b>: {{ event.date }} {{ event.number_of_guest }} {{ event.room_location }} {{ event.description }}
       {% if event.recurring %}
       <span><b>Yearly</b> 🔁</span>
       {% endif %}
